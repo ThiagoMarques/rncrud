@@ -22,7 +22,7 @@ export default ({ route, navigation }) => {
             <Text>URL do Avatar</Text>
             <TextInput
                 style={style.input}
-                onChangeText={avatarURL => setUser({ ...user, avatarUrl })}
+                onChangeText={avatarUrl => setUser({ ...user, avatarUrl })}
                 placeholder="Informe a URL do Avatar"
                 value={user.avatarUrl} />
             <Button
@@ -33,8 +33,6 @@ export default ({ route, navigation }) => {
             >
             </Button>
         </SafeAreaView>
-
-
     )
 }
 

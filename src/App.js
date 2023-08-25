@@ -7,12 +7,13 @@ import { createStackNavigator } from '@react-navigation/stack'
 import UserList from './views/UserList';
 import UserForm from './views/UserForm';
 import { Button, Icon } from 'react-native-elements';
+import { UsersProvider } from './context/UsersContext';
 
 const Stack = createStackNavigator();
 
 export default props => {
     return (
-        <NavigationContainer>
+        <><UsersProvider><NavigationContainer>
             <Stack.Navigator initialRouteName="UserList" screenOptions={screenOptions}>
                 <Stack.Screen name="UserList" component={UserList} options={({ navigation }) => {
                     return {
@@ -21,18 +22,18 @@ export default props => {
                             <Button
                                 onPress={() => navigation.navigate("UserForm")}
                                 type="clear"
-                                icon={<Icon name="add" size={25} color="white" />}
-                            />
+                                icon={<Icon name="add" size={25} color="white" />} />
                         )
-                    }
-                }}>
+                    };
+                } }>
                 </Stack.Screen>
                 <Stack.Screen name="UserForm" component={UserForm} options={{
                     title: "Formulário de Usuários"
                 }}>
                 </Stack.Screen>
             </Stack.Navigator>
-        </NavigationContainer>
+        </NavigationContainer></UsersProvider>
+        </>
     );
 }
 
