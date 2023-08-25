@@ -31,7 +31,6 @@ export default ({ route, navigation }) => {
                 navigation.goBack();
             }}
             >
-
             </Button>
         </SafeAreaView>
 
