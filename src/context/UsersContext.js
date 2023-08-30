@@ -31,9 +31,9 @@ const actions = {
 
 export const UsersProvider = props => {
 
-    function reducer(state, action) {
-        const fn = actions[action.type]
-        return fn ? fn(state, action) : state
+    function reducer(state, action) { //genérica, captura uma função
+        const fn = actions[action.type] 
+        return fn ? fn(state, action) : state //recebe o estado da função
     }
 
 
